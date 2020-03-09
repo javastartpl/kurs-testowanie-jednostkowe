@@ -1,8 +1,9 @@
-package pl.javastart.tj;
+package pl.javastart.tj.daysinmonth;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import pl.javastart.tj.daysinmonth.DaysInMonthCalculator;
 
 import static org.assertj.core.api.Assertions.assertThat;
 

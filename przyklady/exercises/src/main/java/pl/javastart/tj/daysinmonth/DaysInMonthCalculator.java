@@ -1,4 +1,4 @@
-package pl.javastart.tj;
+package pl.javastart.tj.daysinmonth;
 
 public class DaysInMonthCalculator {
 

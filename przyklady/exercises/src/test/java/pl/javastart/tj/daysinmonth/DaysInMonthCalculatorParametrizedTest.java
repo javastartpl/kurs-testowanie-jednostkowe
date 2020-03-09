@@ -1,7 +1,8 @@
-package pl.javastart.tj;
+package pl.javastart.tj.daysinmonth;
 
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
+import pl.javastart.tj.daysinmonth.DaysInMonthCalculator;
 
 import static org.assertj.core.api.Assertions.assertThat;
 

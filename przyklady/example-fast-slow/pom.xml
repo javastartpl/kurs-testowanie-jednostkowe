@@ -9,9 +9,8 @@
     </parent>
 
     <properties>
-        <java.compiler.source>1.8</java.compiler.source>
-        <java.compiler.target>1.8</java.compiler.target>
-        <tests></tests>
+        <java.compiler.source>11</java.compiler.source>
+        <java.compiler.target>11</java.compiler.target>
     </properties>
 
     <modelVersion>4.0.0</modelVersion>
