@@ -26,6 +26,6 @@ public class ExceptionThrowingExampleTest {
         User findById(Long id);
     }
 
-    private static interface User { }
+    private interface User { }
     private static class NoAccessException extends RuntimeException { }
 }
