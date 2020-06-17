@@ -5,18 +5,21 @@ import java.math.BigDecimal;
 
 public class ExceptionExercise {
 
+    // TODO ćwiczenie dotyczące wyjątków
 
     public BigDecimal getQuotaOnInvoice(Long invoiceId) throws DataNotAvailableException {
-        Database database = new Database();
+//        Database database = new Database();
+//
+//        Invoice invoice = database.findInvoiceById(invoiceId);
+//
+////        return invoice.getQuota();
+//
+//        new RuntimeException(new FileNotFoundException()).getCause();
 
-        Invoice invoice = database.findInvoiceById(invoiceId);
+//        DataNotAvailableException()
 
-        return invoice.getQuota();
 
-        new RuntimeException(new FileNotFoundException()).getCause();
-
-        DataNotAvailableException()
-
+        return null;
     }
 
 }

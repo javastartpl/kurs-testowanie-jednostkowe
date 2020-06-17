@@ -1,13 +1,13 @@
-package pl.javastart.tj.exception1.mocking1;
+package pl.javastart.tj.exception1;
 
 import java.math.BigDecimal;
 
-public class SalaryCalculatorService {
+class SalaryCalculatorService {
 
-    public BigDecimal calculateSalary(Employee employee) {
+    public BigDecimal calculateSalary(Employee employee) throws SalaryCalculationFailedException {
         TaskManagementSystem taskManagementSystem = new TaskManagementSystem();
-        int finishedTasks = taskManagementSystem.countFinishedTasksForEmployee(employee);
 
+        int finishedTasks = taskManagementSystem.countFinishedTasksForEmployee(employee);
         BigDecimal bonus = BigDecimal.ZERO;
         if (finishedTasks >= 10) {
             bonus = new BigDecimal("500");

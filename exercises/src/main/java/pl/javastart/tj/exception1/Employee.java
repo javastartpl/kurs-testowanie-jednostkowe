@@ -1,8 +1,8 @@
-package pl.javastart.tj.exception1.mocking1;
+package pl.javastart.tj.exception1;
 
 import java.math.BigDecimal;
 
-public class Employee {
+class Employee {
 
     private String name;
     private BigDecimal baseSalary;
