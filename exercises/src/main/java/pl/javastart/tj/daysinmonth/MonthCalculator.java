@@ -1,8 +1,8 @@
 package pl.javastart.tj.daysinmonth;
 
-public class DaysInMonthCalculator {
+public class MonthCalculator {
 
-    public int geDayCount(int year, int month) {
+    public int getDayCount(int year, int month) {
 
         switch (month) {
             case 1:
@@ -18,11 +18,8 @@ public class DaysInMonthCalculator {
             case 9:
             case 11:
                 return 30;
-            case 2:
-                if(year % 4 == 0 && year % 100 != 0) return 29;
-                return 28;
         }
 
-        return 0;
+        return (year % 400 == 0 || (year % 4 == 0 && year % 100 != 0)) ? 29 : 28;
     }
 }
