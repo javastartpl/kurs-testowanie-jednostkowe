@@ -43,6 +43,7 @@
     <properties>
         <java.compiler.source>11</java.compiler.source>
         <java.compiler.target>11</java.compiler.target>
+        <mockito.version>3.4.4</mockito.version>
     </properties>
 
     <dependencies>
@@ -71,14 +72,14 @@
         <dependency>
             <groupId>org.mockito</groupId>
             <artifactId>mockito-core</artifactId>
-            <version>3.3.3</version>
+            <version>${mockito.version}</version>
             <scope>test</scope>
         </dependency>
 
         <dependency>
             <groupId>org.mockito</groupId>
             <artifactId>mockito-junit-jupiter</artifactId>
-            <version>3.3.3</version>
+            <version>${mockito.version}</version>
             <scope>test</scope>
         </dependency>
 
