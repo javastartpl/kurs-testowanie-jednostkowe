@@ -3,25 +3,14 @@ package pl.javastart.tj.junit5assertions;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-public class JUnit5AssertionsSolutionTest {
+import static org.junit.jupiter.api.Assertions.*;
+
+class JUnit5AssertionsSolutionTest {
+
+    private JUnit5AssertionsSolution sut = new JUnit5AssertionsSolution();
 
     @Test
-    public void should7BePrimeNumber() {
-        // given
-        JUnit5AssertionsSolution sut = new JUnit5AssertionsSolution();
-
-        // when
-        boolean result = sut.isPrimeNumber(7);
-
-        // then
-        Assertions.assertTrue(result);
-    }
-
-    @Test
-    public void should1BePrimeNumber() {
-        // given
-        JUnit5AssertionsSolution sut = new JUnit5AssertionsSolution();
-
+    public void shouldBePrimeFor1() {
         // when
         boolean result = sut.isPrimeNumber(1);
 
@@ -30,21 +19,17 @@ public class JUnit5AssertionsSolutionTest {
     }
 
     @Test
-    public void should9NotBePrimeNumber() {
-        // given
-        JUnit5AssertionsSolution sut = new JUnit5AssertionsSolution();
+    public void shouldBePrimeFor2() {
 
         // when
-        boolean result = sut.isPrimeNumber(9);
+        boolean result = sut.isPrimeNumber(2);
 
         // then
-        Assertions.assertFalse(result);
+        Assertions.assertTrue(result);
     }
 
     @Test
-    public void should10NotBePrimeNumber() {
-        // given
-        JUnit5AssertionsSolution sut = new JUnit5AssertionsSolution();
+    public void shouldNotBePrimeFor10() {
 
         // when
         boolean result = sut.isPrimeNumber(10);
@@ -54,29 +39,64 @@ public class JUnit5AssertionsSolutionTest {
     }
 
     @Test
-    public void shouldReturnSameObjects() {
-        // given
-        JUnit5AssertionsSolution sut = new JUnit5AssertionsSolution();
+    public void shouldNotBePrimeFor11() {
 
         // when
-        JUnit5AssertionsSolution.Code firstCode = sut.getCode("a");
-        JUnit5AssertionsSolution.Code secondCode = sut.getCode("a");
+        boolean result = sut.isPrimeNumber(11);
 
         // then
-        Assertions.assertSame(firstCode, secondCode);
+        Assertions.assertTrue(result);
+    }
+
+    @Test
+    public void shouldNotBePrimeFor13() {
+
+        // when
+        boolean result = sut.isPrimeNumber(13);
+
+        // then
+        Assertions.assertTrue(result);
+    }
+
+    @Test
+    public void shouldNotBePrimeFor9() {
+
+        // when
+        boolean result = sut.isPrimeNumber(9);
+
+        // then
+        Assertions.assertFalse(result);
+    }
+
+    @Test
+    public void shouldReturnValidCode() {
+        // when
+        JUnit5AssertionsSolution.Code code = sut.getCode("a");
+
+        // then
+        Assertions.assertEquals("a", code.getKey());
+        Assertions.assertNotNull(code.getCreatedAtTimestamp());
+        Assertions.assertNotNull(code.getCode());
+    }
+
+    @Test
+    public void shouldReturnSameObjects() {
+        // when
+        JUnit5AssertionsSolution.Code code = sut.getCode("a");
+        JUnit5AssertionsSolution.Code code2 = sut.getCode("a");
+
+        // then
+        Assertions.assertSame(code, code2);
     }
 
     @Test
     public void shouldReturnDifferentObjects() {
-        // given
-        JUnit5AssertionsSolution sut = new JUnit5AssertionsSolution();
-
         // when
-        JUnit5AssertionsSolution.Code firstCode = sut.getCode("a");
-        JUnit5AssertionsSolution.Code secondCode = sut.getCode("b");
+        JUnit5AssertionsSolution.Code code = sut.getCode("a");
+        JUnit5AssertionsSolution.Code code2 = sut.getCode("b");
 
         // then
-        Assertions.assertNotSame(firstCode, secondCode);
+        Assertions.assertNotSame(code, code2);
     }
 
 }

@@ -12,7 +12,10 @@ public class JUnit5MultipleAssertions {
 
     @Test
     void shouldCorrectlyCreateHulk() {
+        // when
         Superhero hulk = Superheros.getHulk();
+
+        // then
         assertThat(hulk.getAbilities()).contains("intelligence");
         assertThat(hulk.getColor()).isEqualTo("blue");
         assertThat(hulk.getPublisher()).isEqualTo("Disney");

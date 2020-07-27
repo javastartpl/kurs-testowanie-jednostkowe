@@ -1,26 +1,12 @@
 package pl.javastart.junittestingcourse.examples.sources;
 
 import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class ValueSourceExample {
-
-    @Test
-    void shouldBeValid() {
-        // given
-        EmailValidator emailValidator = new EmailValidator();
-
-        // when
-        boolean isValid = emailValidator.isValid("example@example.com");
-
-        // then
-        assertThat(isValid).isEqualTo(true);
-
-    }
 
     @ParameterizedTest
     @ValueSource(strings = {"example@example.com", "a@a.pl", "a@domena.com.pl", "a123@onion"})

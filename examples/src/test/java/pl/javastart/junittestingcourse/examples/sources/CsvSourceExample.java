@@ -8,7 +8,10 @@ import static org.assertj.core.api.Assertions.assertThat;
 public class CsvSourceExample {
 
     @ParameterizedTest
-    @CsvSource({"gmail.com, PROVIDER", "trash-mail.com, TRASHMAIL", "outlook.com, PROVIDER", "kowalski.pl, PRIVATE"})
+    @CsvSource({"gmail.com, PROVIDER",
+            "trash-mail.com, TRASHMAIL",
+            "outlook.com, PROVIDER",
+            "kowalski.pl, PRIVATE"})
     void shouldProperlyRecognizeEmailProvider(String domain, EmailProviderType expectedProviderType) {
         // given
         EmailValidator emailValidator = new EmailValidator();

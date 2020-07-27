@@ -8,15 +8,15 @@ public class JUnit5Assertions {
     private Map<String, Code> codes;
 
     /**
-     * Checks if given number is prime or not
+     * Sprawdza czy liczba jest liczbą pierwszą (czy dzieli się tylko przez siebie i 1)
      */
     boolean isPrimeNumber(int number) {
         return false;
     }
 
     /**
-     * Generates and returns Code for given key.
-     * If the Code for given key already exists it will be returned instead
+     * Generuje i zwraca obiekt klasy Code dla wskazanego klucza
+     * Jeśli kod dla danego klucza istnieje to powinien zostać zwrócony istniejący obiekt
      */
     Code getCode(String key) {
         if (!codes.containsKey(key)) {

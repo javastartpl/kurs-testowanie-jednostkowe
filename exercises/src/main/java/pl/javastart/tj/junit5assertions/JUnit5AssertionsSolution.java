@@ -8,6 +8,9 @@ public class JUnit5AssertionsSolution {
 
     private Map<String, Code> codes = new HashMap<>();
 
+    /**
+     * Sprawdza czy liczba jest liczbą pierwszą (czy dzieli się tylko przez siebie i 1)
+     */
     boolean isPrimeNumber(int number) {
         for (int i = 2; i <= Math.sqrt(number); i++) {
             if (number % i == 0) {
@@ -18,8 +21,8 @@ public class JUnit5AssertionsSolution {
     }
 
     /**
-     * Generates and returns Code for given key.
-     * If the Code for given key already exists it will be returned instead
+     * Generuje i zwraca obiekt klasy Code dla wskazanego klucza
+     * Jeśli kod dla danego klucza istnieje to powinien zostać zwrócony istniejący obiekt
      */
     Code getCode(String key) {
         if (codes.containsKey(key)) {
