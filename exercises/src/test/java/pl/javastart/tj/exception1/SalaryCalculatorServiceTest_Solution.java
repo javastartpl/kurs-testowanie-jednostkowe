@@ -10,7 +10,7 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import java.math.BigDecimal;
 
 @ExtendWith(MockitoExtension.class)
-class SalaryCalculatorServiceTest {
+class SalaryCalculatorServiceTest_Solution {
 
     @Mock TaskManagementSystem taskManagementSystem;
 
