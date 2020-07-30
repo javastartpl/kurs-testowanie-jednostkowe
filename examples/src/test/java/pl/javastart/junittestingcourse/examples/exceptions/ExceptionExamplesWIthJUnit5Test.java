@@ -17,17 +17,29 @@ public class ExceptionExamplesWIthJUnit5Test {
         divideByZero();
     }
 
+
+
+
+
+
+
+
+
     @Test
     public void shouldFailBecauseOfAnExceptionWithExpliciteTesting() {
         // wynik: org.opentest4j.AssertionFailedError: Unexpected exception thrown: java.lang.ArithmeticException
         Assertions.assertDoesNotThrow(() -> divideByZero());
     }
 
-    @Test
-    public void shouldThrowException() {
-        Throwable thrownException = Assertions.assertThrows(ArithmeticException.class, () -> divideByZero());
-        assertThat(thrownException).extracting(Throwable::getMessage).isEqualTo("/ by zero");
-    }
+
+
+
+
+
+
+
+
+
 
     @Test
     public void shouldVerifyThatExceptionIsThrownWithoutFramework() {
@@ -39,6 +51,22 @@ public class ExceptionExamplesWIthJUnit5Test {
         }
         Assertions.fail("Expected exception was not thrown!");
     }
+
+
+
+
+
+    @Test
+    public void shouldThrowException() {
+        Throwable thrownException = Assertions.assertThrows(ArithmeticException.class, this::divideByZero);
+        assertThat(thrownException).extracting(Throwable::getMessage).isEqualTo("/ by zero");
+    }
+
+
+
+
+
+
 
     @Test
     public void shouldVerifyThatExceptionIsThrownWithJUnit5() {

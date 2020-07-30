@@ -19,7 +19,7 @@ public class ExceptionExamplesWIthAssertJTest {
 
     @Test
     public void shouldVerifyThatExceptionIsThrownWithAssertJ() {
-        Assertions.assertThatThrownBy(() -> divideByZero()) // org.assertj.core.api.Assertions
+        Assertions.assertThatThrownBy(this::divideByZero) // org.assertj.core.api.Assertions
                 .isInstanceOf(ArithmeticException.class)
                 .hasMessage("/ by zero")
                 .hasMessageEndingWith("zero");
@@ -58,7 +58,6 @@ public class ExceptionExamplesWIthAssertJTest {
     public void shouldThrow() {
         Assertions.shouldHaveThrown(FileNotFoundException.class);
         Assertions.failBecauseExceptionWasNotThrown(RuntimeException.class);
-        Assertions.shouldHaveThrown(IOException.class);
     }
 
 }

@@ -27,20 +27,21 @@
         <java.compiler.source>11</java.compiler.source>
         <java.compiler.target>11</java.compiler.target>
         <mockito.version>3.4.4</mockito.version>
+        <junit.version>5.4.0</junit.version>
     </properties>
 
     <dependencies>
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-api</artifactId>
-            <version>5.2.0</version>
+            <version>${junit.version}</version>
             <scope>test</scope>
         </dependency>
 
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-params</artifactId>
-            <version>5.2.0</version>
+            <version>${junit.version}</version>
             <scope>test</scope>
         </dependency>
 

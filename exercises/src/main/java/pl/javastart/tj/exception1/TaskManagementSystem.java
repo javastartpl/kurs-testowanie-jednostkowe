@@ -8,8 +8,7 @@ class TaskManagementSystem {
      * Ta metoda nie ma być testowana, specjalnie jest tutaj losowa implementacja
      */
     public int countFinishedTasksForEmployee(Employee employee) throws EmployeeNoLongerWorkingException {
-        throw  new EmployeeNoLongerWorkingException();
-//        return new Random().nextInt(30);
+        return new Random().nextInt(30);
     }
 
 }

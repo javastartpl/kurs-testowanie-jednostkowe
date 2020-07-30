@@ -14,6 +14,7 @@ import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
 public class ArgumentMatcherTest {
+
     @Test
     public void shouldHandleVoidMethod() {
         User user = mock(User.class);
@@ -82,7 +83,7 @@ public class ArgumentMatcherTest {
     @Test
     public void customMatcher() {
         File file = new File("file.txt");
-        ArgumentMatchers.argThat((ArgumentMatcher<File>) argument -> file.getName().endsWith(".txt"));
+        File fileMatcher = ArgumentMatchers.argThat((ArgumentMatcher<File>) argument -> file.getName().endsWith(".txt"));
 
         ArgumentMatchers.argThat(new ArgumentMatcher<File>() {
             @Override
@@ -95,8 +96,8 @@ public class ArgumentMatcherTest {
     @Test
     public void nullMatchers() {
         ArgumentMatchers.notNull(); // to samo co ArgumentMatchers.isNotNull()
-        ArgumentMatchers.isNotNull(); // to samo co ArgumentMatchers.isNotNull()
-        ArgumentMatchers.isNull(); // to samo co ArgumentMatchers.notNull()
+        ArgumentMatchers.isNotNull(); // to samo co ArgumentMatchers.notNull()
+        ArgumentMatchers.isNull();
         ArgumentMatchers.nullable(Clazz.class); // null or type
     }
 
