@@ -18,6 +18,7 @@
         <module>examples</module>
         <module>example-fast-slow</module>
         <module>exercises</module>
+        <module>solutions</module>
     </modules>
 
 </project>
