@@ -2,14 +2,15 @@ package pl.javastart.junittestingcourse.examples.argumentmatcher;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.mockito.ArgumentMatchers;
 import org.mockito.Mockito;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.ArgumentMatchers.*;
+import static org.mockito.Mockito.never;
 import static org.mockito.Mockito.verify;
 
 class PasswordCheckerTest {
-
 
     @Test
     void shouldRunNotificationService() {
@@ -34,7 +35,7 @@ class PasswordCheckerTest {
         mockitoVerifyExample.checkPassword("A123B32");
 
         // then
-        verify(invalidPasswordService, Mockito.times(0)).notifyAboutInvalidPassword();
+        verify(invalidPasswordService, never()).notifyAboutInvalidPassword();
     }
 
     @Test
@@ -44,11 +45,25 @@ class PasswordCheckerTest {
         PasswordChecker mockitoVerifyExample = new PasswordChecker(invalidPasswordService);
 
         // when
-        mockitoVerifyExample.checkPasswordNew("abc", "127.0.0.1");
+        mockitoVerifyExample.checkPasswordNew("abc", "127.0.0.2");
 
         // then
-        verify(invalidPasswordService).notifyAboutInvalidPassword(anyInt(), anyString());
+        verify(invalidPasswordService, never()).notifyAboutInvalidPassword(anyInt(), eq("Próba włamania z ip: 127.0.0.1"));
     }
+
+    @Test
+    void shouldNotTriggerNotificationService() {
+        // given
+        InvalidPasswordService invalidPasswordService = Mockito.mock(InvalidPasswordService.class);
+        PasswordChecker mockitoVerifyExample = new PasswordChecker(invalidPasswordService);
+
+        // when
+        mockitoVerifyExample.checkPasswordNew("A123B32", "127.0.0.1");
+
+        // then
+        verify(invalidPasswordService, never()).notifyAboutInvalidPassword(anyInt(), any());
+    }
+
 
     @Test
     void shouldTriggerNotificationServiceStartingWithRightMessage() {
@@ -60,7 +75,7 @@ class PasswordCheckerTest {
         mockitoVerifyExample.checkPasswordNew("abc", "127.0.0.1");
 
         // then
-        verify(invalidPasswordService).notifyAboutInvalidPassword(anyInt(), startsWith("Próba włamania z ip: ")); // Mockito.startsWith()
+        verify(invalidPasswordService).notifyAboutInvalidPassword(anyInt(), startsWith("Próba włamania z ip: ")); // ArgumentMatchers.startsWith()
     }
 
     @Test
@@ -86,6 +101,6 @@ class PasswordCheckerTest {
         mockitoVerifyExample.checkPasswordNew("abc", "127.0.0.1");
 
         // then
-        verify(invalidPasswordService).notifyAboutInvalidPassword(anyInt(), eq("Próba włamania z ip: 127.0.0.1")); // Mockito.eq()
+        verify(invalidPasswordService).notifyAboutInvalidPassword(anyInt(), ArgumentMatchers.eq("Próba włamania z ip: 127.0.0.1")); // ArgumentMatchers.eq()
     }
 }
