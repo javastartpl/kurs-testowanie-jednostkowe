@@ -21,6 +21,8 @@ class PasswordCheckerTest {
         // when
         mockitoVerifyExample.checkPassword("abc");
 
+        mockitoVerifyExample.getClass().getName();
+
         // then
         verify(invalidPasswordService).notifyAboutInvalidPassword();
     }
