@@ -26,7 +26,7 @@ class SalaryCalculatorServiceTest {
         Assertions.assertThatThrownBy(() -> salaryCalculatorService.calculateSalary(ted))
                 .isInstanceOf(SalaryCalculationFailedException.class)
                 .hasCauseInstanceOf(EmployeeNoLongerWorkingException.class)
-                .hasMessage("Could not calculate salary. Reason: Employee is not longer hired");
+                .hasMessage("Could not calculate salary. Reason: Employee is no longer hired");
     }
 
     @Test
