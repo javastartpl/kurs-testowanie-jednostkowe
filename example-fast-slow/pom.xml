@@ -9,8 +9,8 @@
     </parent>
 
     <properties>
-        <java.compiler.source>11</java.compiler.source>
-        <java.compiler.target>11</java.compiler.target>
+        <java.compiler.source>20</java.compiler.source>
+        <java.compiler.target>20</java.compiler.target>
     </properties>
 
     <modelVersion>4.0.0</modelVersion>

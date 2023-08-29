@@ -10,8 +10,8 @@
     <version>1.0</version>
 
     <properties>
-        <java.compiler.source>11</java.compiler.source>
-        <java.compiler.target>11</java.compiler.target>
+        <java.compiler.source>20</java.compiler.source>
+        <java.compiler.target>20</java.compiler.target>
     </properties>
 
     <modules>

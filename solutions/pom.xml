@@ -24,8 +24,8 @@
 </build>
 
     <properties>
-        <java.compiler.source>11</java.compiler.source>
-        <java.compiler.target>11</java.compiler.target>
+        <java.compiler.source>20</java.compiler.source>
+        <java.compiler.target>20</java.compiler.target>
         <mockito.version>3.4.4</mockito.version>
         <junit.version>5.4.0</junit.version>
     </properties>

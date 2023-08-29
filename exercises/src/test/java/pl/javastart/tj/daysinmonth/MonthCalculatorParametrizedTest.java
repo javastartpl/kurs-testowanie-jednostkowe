@@ -26,7 +26,7 @@ class MonthCalculatorParametrizedTest {
     }
 
     @ParameterizedTest
-    @CsvSource( {"2001, 04", "2001, 06", "2001, 09", "2001, 11" })
+    @CsvSource( {"2001, 4", "2001, 6", "2001, 9", "2001, 11" })
     public void shouldReturn30Days(int year, int month) {
         // when
         int dayCount = monthCalculator.getDayCount(year, month);
